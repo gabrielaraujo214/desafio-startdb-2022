@@ -1,7 +1,7 @@
 class Forca {
   chutar(letra) {
     if (letra.length() == 1) {
-      for (let i = 0; i < this.palavraSecreta.length; i++)
+      for (let i = 0; i < this.palavraSecreta.length; i++) {
         if (this.palavraSecreta[i] == letra) {
           letrasChutadas.push(letra);
           palavra[i] == letra;
@@ -9,23 +9,18 @@ class Forca {
           letrasChutadas.push(letra);
           vidas--;
         }
+      }
     }
   }
 
   buscarEstado() {
     if (this.buscarDadosDoJogo().vidas == 0) {
       return "perdeu";
-    }
-    let letrasCertas = 0;
-    for (let i = 0; i < this.palavraSecreta.length; i++) {
-      if (this.palavraSecreta[i] == palavra[i]) {
-        letrasCertas++;
-      }
-    }
-    if (letrasCertas == this.palavraSecreta.length) {
+    } else if (this.palavraSecreta == palavra) {
       return "ganhou";
+    } else {
+      return "aguardando chute";
     }
-    return "aguardando chute";
   } // Possiveis valores: "perdeu", "aguardando chute" ou "ganhou"
 
   buscarDadosDoJogo() {
@@ -42,6 +37,6 @@ class Forca {
       palavra.push("_");
     });
   }
-
-  exports = Forca;
 }
+
+module.exports = Forca;
