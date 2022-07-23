@@ -12,7 +12,8 @@ class Forca {
     if (letra.length == 1) {
       if (!this.letraChutadaRepetida(letra)) {
         this.letrasChutadas.push(letra);
-        // O loop checa se a letra chutada é igual a algum caractere da palavraSecreta, e se sim, ele troca o espaço "_" da array palavra pela letra, e chuteCerto se torna verdadeiro
+        // O loop checa se a letra chutada é igual a algum caractere da palavraSecreta, e se sim,
+        // ele troca o espaço "_" da array palavra pela letra, e chuteCerto se torna verdadeiro
         let chuteCerto = false;
         for (let i = 0; i <= this.palavraSecreta.length; i++) {
           if (this.palavraSecreta[i] == letra) {
@@ -31,7 +32,10 @@ class Forca {
     if (this.vidas <= 0) {
       return "perdeu";
     }
-    // O loop adiciona 1 para cada letra igual que estiver presente em ambas as variáveis palavraSecreta e palavra, e se a quantidade de letrasCertas for igual ao tamanho da palavraSecreta (ou seja, se a palavraSecreta e palavra forem iguais), o método retorna ao usuário que ele ganhou
+    // O loop adiciona 1 para cada letra igual que estiver presente em ambas as variáveis
+    // palavraSecreta e palavra, e se a quantidade de letrasCertas for igual ao tamanho da
+    // palavraSecreta (ou seja, se a palavraSecreta e palavra forem iguais), o método retorna ao
+    // usuário que ele ganhou
     let letrasCertas = 0;
     for (let i = 0; i < this.palavraSecreta.length; i++) {
       if (this.palavraSecreta[i] == this.palavra[i]) {
@@ -42,7 +46,7 @@ class Forca {
       return "ganhou";
     }
     return "aguardando chute";
-  } // Possiveis valores: "perdeu", "aguardando chute" ou "ganhou"
+  }
 
   buscarDadosDoJogo() {
     // Para cada caractere da palavraSecreta, é adicionado um "_" na array palavra
@@ -51,11 +55,7 @@ class Forca {
         this.palavra[i] = "_";
       }
     }
-    return [
-      this.letrasChutadas, // Deve conter todas as letras chutadas
-      this.vidas, // Quantidade de vidas restantes
-      this.palavra, // Deve ser um array com as letras que já foram acertadas ou o valor "_" para as letras não identificadas
-    ];
+    return [this.letrasChutadas, this.vidas, this.palavra];
   }
 
   constructor(palavraSecreta) {
