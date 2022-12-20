@@ -1,7 +1,3 @@
-# Como implementar o desafio?
-
-Para o desafio definimos uma estrutura a ser seguida de forma que lhe auxilie no que deve ser entregue e também nos ajude a corrigir e executar o código. A linguagem escolhida foi o Javascript (ou JS) e você pode encontrar mais detalhes sobre instalação no [README](../README.md).
-
 ## Estrutura de diretórios
 
 ![estrutura de diretórios](./estrutura.jpeg)
